@@ -1,0 +1,16 @@
+C:\Users\NEFARIION\Desktop\My Awesome Program\bin\Debug\net5.0\My Awesome Program.exe
+C:\Users\NEFARIION\Desktop\My Awesome Program\bin\Debug\net5.0\My Awesome Program.deps.json
+C:\Users\NEFARIION\Desktop\My Awesome Program\bin\Debug\net5.0\My Awesome Program.runtimeconfig.json
+C:\Users\NEFARIION\Desktop\My Awesome Program\bin\Debug\net5.0\My Awesome Program.runtimeconfig.dev.json
+C:\Users\NEFARIION\Desktop\My Awesome Program\bin\Debug\net5.0\My Awesome Program.dll
+C:\Users\NEFARIION\Desktop\My Awesome Program\bin\Debug\net5.0\ref\My Awesome Program.dll
+C:\Users\NEFARIION\Desktop\My Awesome Program\bin\Debug\net5.0\My Awesome Program.pdb
+C:\Users\NEFARIION\Desktop\My Awesome Program\obj\Debug\net5.0\My Awesome Program.csproj.AssemblyReference.cache
+C:\Users\NEFARIION\Desktop\My Awesome Program\obj\Debug\net5.0\My Awesome Program.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\NEFARIION\Desktop\My Awesome Program\obj\Debug\net5.0\My Awesome Program.AssemblyInfoInputs.cache
+C:\Users\NEFARIION\Desktop\My Awesome Program\obj\Debug\net5.0\My Awesome Program.AssemblyInfo.cs
+C:\Users\NEFARIION\Desktop\My Awesome Program\obj\Debug\net5.0\My Awesome Program.csproj.CoreCompileInputs.cache
+C:\Users\NEFARIION\Desktop\My Awesome Program\obj\Debug\net5.0\My Awesome Program.dll
+C:\Users\NEFARIION\Desktop\My Awesome Program\obj\Debug\net5.0\ref\My Awesome Program.dll
+C:\Users\NEFARIION\Desktop\My Awesome Program\obj\Debug\net5.0\My Awesome Program.pdb
+C:\Users\NEFARIION\Desktop\My Awesome Program\obj\Debug\net5.0\My Awesome Program.genruntimeconfig.cache
