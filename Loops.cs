@@ -8,25 +8,21 @@ namespace My_Awesome_Program
     {
         static void Main(string[] args)
         {
+            Console.Title = "CHAT D100"; // Muda o título do App
+            Console.ForegroundColor = ConsoleColor.Cyan; // Muda a cor da fonte
+            Console.WindowHeight = 40; // Muda a altura da janela
+            Console.WindowWidth = 160; // Muda a largura da janela
 
-            Console.Title = "CHAT D100";
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WindowHeight = 40;
-            Console.WindowWidth = 160;
-
-            bool continuarSair;
             string playerName;
-            int roll = 0; //Defino um valor inicial para o roll do dado, começando em 0.
+            int roll;
+            int tentativas = 0;
 
-            Console.WriteLine("Olá, qual é o seu nome?");
+            Console.WriteLine("Olá, seja bem vindo(a) ao CHATNATOR! Vou tentar adivinhar o número que você digitar.");
+            Console.WriteLine("Antes de começarmos, me diga, qual é o seu nome?");
             playerName = Console.ReadLine();
 
             Regex userName = new Regex("^[A-Z][a-zA-Z]*$"); // Crio uma RegularExpression para verificar se o nome de usuário contém numeral de 0 à 9.
             if (userName.IsMatch(playerName))
-            {
-                Console.WriteLine("Numerais e caracteres especiais não são válidos no seu nome. Tente novamente");
-            }
-            else
             {
                 Console.WriteLine("Prazer em te conhecer, " + playerName + ". Para jogar, digite um número de 1 à 100. Tentarei adivinhar o número. Caso queira sair, aperte 0.");
                 int count = Convert.ToInt32(Console.ReadLine()); //Pego o número do usário como String (texto) e converto em um Int (número inteiro)
@@ -44,29 +40,68 @@ namespace My_Awesome_Program
                 else if (count > 100 || count < 1) // Verificador da trollagem de count
                 {
                     Console.WriteLine("Eu pedi um número entre 1 e 100. Você digitou " + count + ". Aperte qualquer coisa pare reiniciar o jogo, bobão.");
-
                 }
                 else
                 {
-                    Random numberGen = new Random(); //Inicialização do RNG
+                    Console.WriteLine("Perfeito! Vamos começar então. Eu acredito que seu número seja...");
+                    Random numberGen = new Random();
+                    roll = numberGen.Next(1, 101);
+                    Console.WriteLine(roll);
+                    Console.WriteLine("Está correto? S para Sim e N para não");
 
-                    while (roll != count) //Enquanto ROLL for DIFERENTE do COUNT (número colocado pelo usuário), eu rolo o dado novamente
+                    var yesOrNo = Console.ReadKey();
+
+                    if (yesOrNo.Key == ConsoleKey.N && roll == count)
                     {
-                        roll = numberGen.Next(1, 101); //Defino que meu roll pode ser qualquer número entre 0 e o selecionado pelo usuário
-                        Console.WriteLine("Seu número é " + roll + ". Acertei?");
-                        Console.WriteLine("Aperte S para Sim e N para Não.");
+                        Console.WriteLine("\nEntão você tentou roubar?...Muito feio viu. Bom, eu ganhei e você é um mal perdedor.");
+                        Console.WriteLine("Obrigado por ter jogado");
+                        Console.WriteLine("Pressione qualquer tecla para sair do jogo.");
                         Console.ReadKey();
-
-                        var yesOrNo = Console.ReadKey();
-
+                        Environment.Exit(0);
+                    }
+                    else if (yesOrNo.Key == ConsoleKey.S && roll != count)
+                    {
+                        Console.WriteLine("\nEntão você tentou roubar?...Muito feio viu. Bom, eu ganhei e você é um mal perdedor.");
+                        Console.WriteLine("Obrigado por ter jogado");
+                        Console.WriteLine("Pressione qualquer tecla para sair do jogo.");
+                        Console.ReadKey();
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        while (yesOrNo.Key != ConsoleKey.S && yesOrNo.Key == ConsoleKey.N)
+                        {
+                            roll = numberGen.Next(1, 101);
+                            Console.WriteLine("\n Droga! Errei? Então seu número deve ser " + roll + ". Acertei?");
+                            yesOrNo = Console.ReadKey();
+                            tentativas++;
+                        }
+                        Console.WriteLine("Acertei? Maravilha! Só precisei pensar " + tentativas + " vezes. Quer jogar novamente?");
+                        yesOrNo = Console.ReadKey();
                         if (yesOrNo.Key == ConsoleKey.S)
                         {
-
+                            Console.WriteLine("Então vamos lá!");
+                        }
+                        else if (yesOrNo.Key == ConsoleKey.N)
+                        {
+                            Console.WriteLine("Tudo bem! Obrigado por ter jogado!");
+                            for (var segundos = 5; segundos > 0; segundos--)
+                            {
+                                Console.WriteLine("Sainddo em " + segundos + " segundos...");
+                                Thread.Sleep(1000);
+                            }
+                            Environment.Exit(0);
                         }
                     }
                 }
             }
+            else
+            {
+                Console.WriteLine("Droga, esqueci de avisar. Numerais e caracteres especiais não são válidos no seu nome. Tente novamente");
+                Console.WriteLine("Aperte qualquer botão para reiniciar o jogo.");
+            }
             Console.ReadKey();
+
         }
     }
 }
