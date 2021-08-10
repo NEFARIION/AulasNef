@@ -5,7 +5,7 @@ using System.Text.RegularExpressions; // Importei a função de Regex para filtr
 namespace My_Awesome_Program
 {
     class Loops
-    {
+    {                                                           // Para quem for utilizar esse código para brincar, lembre-se que eu estava aprendendo
         static void Main(string[] args)
         {
             Console.Title = "CHAT D100"; // Muda o título do App
